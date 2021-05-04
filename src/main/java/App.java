@@ -56,18 +56,18 @@ public class App {
         statement = conn.createStatement();
         List<Person> list1 = createNameSurname.createPersons();
         for (Person person : list1) {
-                String sql = "INSERT INTO emp(name,address,dateOfBirthday,dateTimeCreate,letter,passport,salary,timeToLunch) VALUES(?,?,?,?,?,?,?,?)";
-                ps = conn.prepareStatement(sql);
-                ps.setString(1, person.getName());
-                ps.setString(2, person.getAddress());
-                ps.setString(3, person.getDateOfBirthday());
-                ps.setString(4, person.getDateTimeCreate());
-                ps.setString(5, person.getLetter());
-                ps.setString(6, person.getPassport());
-                ps.setString(7, person.getSalary());
-                ps.setString(8, person.getTimeToLunch());
-                statement.executeUpdate(sql);
-            }
+            String sql = "INSERT INTO person(age,address,dateOfBirthday,dateTimeCreate,letter,passport,salary,timeToLunch) VALUES(?,?,?,?,?,?,?,?)";
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, person.getAge());
+            ps.setString(2, person.getAddress());
+            ps.setString(3, person.getDateOfBirthday());
+            ps.setString(4, person.getDateTimeCreate());
+            ps.setString(5, person.getLetter());
+            ps.setString(6, person.getPassport());
+            ps.setString(7, person.getSalary());
+            ps.setString(8, person.getTimeToLunch());
+            statement.executeUpdate(sql);
+        }
     }
 }
 
