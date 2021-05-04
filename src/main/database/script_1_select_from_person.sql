@@ -1,1 +1,1 @@
-select * from Person ORDER BY dateTimeCreate and age>21 and ;
+select * from Person ORDER BY dateTimeCreate and age>21;
