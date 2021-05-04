@@ -33,5 +33,65 @@ public class CreateNameSurname {
         return listName;
     }
 
+    public List<Person> createPersons() {
+        List<Person> list = new ArrayList<>();
 
+        Person person1 = new Person.Builder()
+                .withName("Илья")
+                .withAddress("Кирова 6")
+                .withPassport("1111111111")
+                .withDateOfBirthday("22.11.1994")
+                .withSalary("")
+                .withLetter("Текст")
+                .withTimeToLunch(String.valueOf(System
+                        .currentTimeMillis())).build();
+
+        Person person2 = new Person.Builder()
+                .withName("Илья")
+                .withAddress("Кирова 6")
+                .withPassport("1111111111")
+                .withDateOfBirthday("22.11.1994")
+                .withSalary("")
+                .withLetter("Текст")
+                .withTimeToLunch(String.valueOf(System
+                        .currentTimeMillis())).build();
+
+
+        Person person3 = new Person.Builder()
+                .withName("Илья")
+                .withAddress("Кирова 6")
+                .withPassport("1111111111")
+                .withDateOfBirthday("22.11.1994")
+                .withSalary("")
+                .withLetter("Текст")
+                .withTimeToLunch(String.valueOf(System
+                        .currentTimeMillis())).build();
+
+        Person person4 = new Person.Builder()
+                .withName("Илья")
+                .withAddress("Кирова 6")
+                .withPassport("1111111111")
+                .withDateOfBirthday("22.11.1994")
+                .withSalary("")
+                .withLetter("Текст")
+                .withTimeToLunch(String.valueOf(System
+                        .currentTimeMillis())).build();
+
+
+        Person person5 = new Person.Builder()
+                .withName("Илья")
+                .withAddress("Кирова 6")
+                .withPassport("1111111111")
+                .withDateOfBirthday("22.11.1994")
+                .withSalary("")
+                .withLetter("Текст")
+                .withTimeToLunch(String.valueOf(System
+                        .currentTimeMillis())).build();
+        list.add(person1);
+        list.add(person2);
+        list.add(person3);
+        list.add(person4);
+        list.add(person5);
+        return list;
+    }
 }

@@ -4,6 +4,17 @@ import java.util.*;
 public class Person implements Serializable {
     private transient int age;
     private String name;
+    private String surname;
+    private int id;
+    private String salary; // Десятичные дробные числа
+    private String passport; // Строки с фиксированной длиной (10 символов)
+    private String address; // Строки с переменной длиной (до 200 символов)
+    private String dateOfBirthday; // Дата
+    private String dateTimeCreate; // Дата и время
+    private String timeToLunch; // Время
+    private String letter; // Текст большого объёма
+
+
     int x = 15;
     int y = 30;
 
@@ -15,6 +26,9 @@ public class Person implements Serializable {
         this.age = this.x + (int) (Math.random() * ((this.y - this.x) + 1));
         this.name = nameList.get(this.x1 + (int) (Math.random() * ((this.y1 - this.x1) + 1)));
         this.surname = surnameList.get(this.x1 + (int) (Math.random() * ((this.y1 - this.x1) + 1)));
+    }
+
+    public Person() {
     }
 
     public int getAge() {
@@ -41,7 +55,69 @@ public class Person implements Serializable {
         this.surname = surname;
     }
 
-    private String surname;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getSalary() {
+        return salary;
+    }
+
+    public void setSalary(String salary) {
+        this.salary = salary;
+    }
+
+    public String getPassport() {
+        return passport;
+    }
+
+    public void setPassport(String passport) {
+        this.passport = passport;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getDateOfBirthday() {
+        return dateOfBirthday;
+    }
+
+    public void setDateOfBirthday(String dateOfBirthday) {
+        this.dateOfBirthday = dateOfBirthday;
+    }
+
+    public String getDateTimeCreate() {
+        return dateTimeCreate;
+    }
+
+    public void setDateTimeCreate(String dateTimeCreate) {
+        this.dateTimeCreate = dateTimeCreate;
+    }
+
+    public String getTimeToLunch() {
+        return timeToLunch;
+    }
+
+    public void setTimeToLunch(String timeToLunch) {
+        this.timeToLunch = timeToLunch;
+    }
+
+    public String getLetter() {
+        return letter;
+    }
+
+    public void setLetter(String letter) {
+        this.letter = letter;
+    }
 
     @Override
     public String toString() {
@@ -111,6 +187,60 @@ public class Person implements Serializable {
         System.out.println("###################################");
         for (Person p : list1) {
             System.out.println(p);
+        }
+    }
+
+    public static class Builder {
+        private Person newPerson;
+
+        public Builder() {
+            newPerson = new Person();
+        }
+
+        public Builder withName(String name) {
+            newPerson.name = name;
+            return this;
+        }
+
+        public Builder withSalary(String salary) {
+            newPerson.salary = salary;
+            return this;
+        }
+
+        public Builder withTimeToLunch(String timeToLunch) {
+            newPerson.timeToLunch = timeToLunch;
+            return this;
+        }
+
+        public Builder withPassport(String passport) {
+            newPerson.passport = passport;
+            return this;
+        }
+
+        public Builder withLetter(String letter) {
+            newPerson.letter = letter;
+            return this;
+        }
+
+        public Builder withDateOfBirthday(String dateOfBirthday) {
+            newPerson.dateOfBirthday = dateOfBirthday;
+            return this;
+        }
+
+        public Builder withAddress(String address) {
+            newPerson.address = address;
+            return this;
+        }
+
+        public Builder withId(int id) {
+            newPerson.id = id;
+            return this;
+        }
+
+        //....
+
+        public Person build() {
+            return newPerson;
         }
     }
 
